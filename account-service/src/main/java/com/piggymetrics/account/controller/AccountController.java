@@ -34,6 +34,10 @@ public class AccountController {
 
 	@RequestMapping(path = "/", method = RequestMethod.POST)
 	public Account createNewAccount(@Valid @RequestBody User user) {
+		if(user == null)
+		{
+			return null;
+		}
 		return accountService.create(user);
 	}
 }
